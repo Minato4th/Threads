@@ -3,10 +3,14 @@ package com.endava.util;
 import com.endava.threads.MaxValueThread;
 import com.endava.threads.SumThread;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Initializer {
+
+    public static List<Integer> maxarr = new ArrayList<>();
 
     /**
      * Generate random int values in array
@@ -18,7 +22,6 @@ public class Initializer {
 
         for (int i = 0; i < 100; i++) {
             arr[i] = (int)(Math.random()*100);
-            //arr[i] = i;
         }
 
         return arr;
@@ -52,10 +55,13 @@ public class Initializer {
     }
 
     /**
-     * Find max elements in array, using ThreadPool with 4 Thread.
+     * Find max elements in array, using ThreadPool with max 4 Thread in run.
+     * In order to show functionality of ThreadPool, generates 10 Threads with random Thread.sleep().
+     * Each Thread analyze 1/10 of the array numbers.
      *
      * @param arr array where need to find max value
      * @return max of the array's elements
+     * @exception InterruptedException shouldn't happen
      */
     public int maxValue(int[] arr) throws InterruptedException {
         int max = 0;
@@ -63,29 +69,22 @@ public class Initializer {
         ExecutorService executorService = Executors.newFixedThreadPool(4);
 
         for (int i = 0; i < arr.length/10; i++) {
+            System.out.println("I am Thread " + (i + 1) + ", in the Pool queue");
             MaxValueThread maxThr = new MaxValueThread(arr, i * arr.length/10, (i+1)*arr.length/10);
-            //MaxValueThread maxThr = new MaxValueThread(arr, 0, 5);
             executorService.execute(maxThr);
-            maxThr.start();
-            maxThr.join();
-
-
-            if (maxThr.getMax() > max){
-                max = maxThr.getMax();
-            }
-
-            System.out.println(maxThr.getMax());
         }
 
-        /*MaxValueThread maxThr = new MaxValueThread(arr, 0, 5);
-        maxThr.start();
-        maxThr.join();*/
+        Thread.sleep(5000);
 
-        /*executorService.execute(maxThr);
-
-        executorService.shutdown();*/
-        //System.out.println(maxThr.getMax());
+        for (Integer maxi : maxarr) {
+            if (maxi > max){
+                max = maxi;
+            }
+        }
 
         return max;
     }
+
+
+
 }

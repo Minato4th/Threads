@@ -1,5 +1,6 @@
 package com.endava;
 
+import com.endava.threads.ReverseHello;
 import com.endava.util.Initializer;
 
 /**
@@ -10,10 +11,11 @@ public class Main {
 
         Initializer initializer = new Initializer();
 
-        int[] arr = initializer.randomGenerator();
-        Thread.sleep(10000);
-        System.out.println("Max Value " + initializer.maxValue(arr));
-/*        System.out.println("Max Value " + initializer.sum(arr));*/
+        //int[] arr = initializer.randomGenerator();
+        //System.out.println("Max Value " + initializer.maxValue(arr));
+        //initializer.ReverseHello(50);
 
+        Thread one = new Thread(new ReverseHello());
+        one.run();
     }
 }

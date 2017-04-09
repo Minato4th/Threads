@@ -1,10 +1,7 @@
 package com.endava.threads;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
+import com.endava.util.Initializer;
 
-/**
- * 4/7/2017
- */
 public class MaxValueThread extends Thread{
     private int[] arr;
     private int lo, hi;
@@ -20,23 +17,21 @@ public class MaxValueThread extends Thread{
     @Override
     public void run() {
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         for (int i = lo; i < hi; i++) {
-            //System.out.println(Thread.currentThread() + "     " + arr[i]);
-            //System.out.println(arr[i]);
             if (arr[i] > max){
                 max = arr[i];
             }
         }
 
+        System.out.println(Thread.currentThread() + "     Max number : " + max );
+
+        try {
+            Thread.sleep(1000 + (int)Math.random()*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Initializer.maxarr.add(max);
+
     }
 
-    public int getMax() {
-        return max;
-    }
 }
