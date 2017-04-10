@@ -82,6 +82,7 @@ public class Initializer {
             }
         }
 
+        executorService.shutdown();
         return max;
     }
 

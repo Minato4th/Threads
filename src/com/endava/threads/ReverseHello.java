@@ -7,8 +7,13 @@ package com.endava.threads;
 
 public class ReverseHello extends Thread {
 
-    private int num = 50;
-    private int ls = 50;
+    private int num;
+    private int ls;
+
+    public ReverseHello(int num) {
+        this.num = num;
+        this.ls = num;
+    }
 
     @Override
     public void run() {
