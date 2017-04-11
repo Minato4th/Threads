@@ -2,10 +2,12 @@ package com.endava.service;
 
 public enum Text {
     BASE("Please chose what to do :\n"
-            + "1. Show current workers \n"
-            + "2. Initialize Business Trips \n"
-            + "3. Show current Trips \n"
-            + "4. Exit"),
+            + "1. Sum current Array \n"
+            + "2. Find max in Array \n"
+            + "3. Reverse \"Hello from Thread\" \n"
+            + "4. Three Threads and they interaction \n"
+            + "5. Lambda Threads \n"
+            + "6. Exit"),
 
     BYE("Good Bye!"),
     INCORRECT("Incorrect command, try again!"),

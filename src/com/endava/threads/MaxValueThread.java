@@ -1,6 +1,6 @@
 package com.endava.threads;
 
-import com.endava.util.Initializer;
+import com.endava.util.MenuMethods;
 
 public class MaxValueThread extends Thread{
     private int[] arr;
@@ -26,11 +26,11 @@ public class MaxValueThread extends Thread{
         System.out.println(Thread.currentThread() + "     Max number : " + max );
 
         try {
-            Thread.sleep(1000 + (int)Math.random()*1000);
+            Thread.sleep(1000 + (int)(Math.random()*500));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Initializer.maxarr.add(max);
+        MenuMethods.maxarr.add(max);
 
     }
 

@@ -5,13 +5,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 4/10/2017
  */
-public class ThreadMethods {
+public class AccessThreadMethods {
     private int syncMeth;
     private int unsyncMeth;
     private int primitiveInt;
     private AtomicInteger atomicInt;
 
-    public ThreadMethods() {
+    public AccessThreadMethods() {
         atomicInt = new AtomicInteger();
     }
 
