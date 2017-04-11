@@ -33,5 +33,4 @@ public class MaxValueThread extends Thread{
         MenuMethods.maxarr.add(max);
 
     }
-
 }

@@ -2,9 +2,6 @@ package com.endava.util;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * 4/10/2017
- */
 public class AccessThreadMethods {
     private int syncMeth;
     private int unsyncMeth;
@@ -35,7 +32,7 @@ public class AccessThreadMethods {
      * Increments 10000 times primitive integer type
      */
     public void primitiveIncrement(){
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 10000000; i++) {
             primitiveInt++;
         }
     }
@@ -44,7 +41,7 @@ public class AccessThreadMethods {
      * Increments 10000 times AtomicInteger type
      */
     public void atomicIncrement(){
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 10000000; i++) {
             atomicInt.getAndIncrement();
         }
     }
@@ -53,8 +50,8 @@ public class AccessThreadMethods {
      * Unsynchronized method that increments 100 times primitive integer type by 5
      */
     public void unsyncIncrement(){
-        for (int i = 0; i < 100; i++) {
-            unsyncMeth += 5;
+        for (int i = 0; i < 1000000; i++) {
+            unsyncMeth += 1;
         }
     }
 
@@ -62,8 +59,8 @@ public class AccessThreadMethods {
      * Synchronized method that increments 100 times primitive integer type by 5
      */
     public synchronized void syncIncrement(){
-        for (int i = 0; i < 100; i++) {
-            syncMeth += 5;
+        for (int i = 0; i < 1000000; i++) {
+            syncMeth += 1;
         }
     }
 }

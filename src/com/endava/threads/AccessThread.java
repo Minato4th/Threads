@@ -13,25 +13,14 @@ public class AccessThread extends Thread {
 
     @Override
     public void run() {
-        try {
-            methods.atomicIncrement();
-            System.out.println("Atomic = " + methods.getAtomicInt());
-            Thread.sleep(100);
 
-            methods.primitiveIncrement();
-            System.out.println("Primitive = " + methods.getPrimitiveInt());
-            Thread.sleep(100);
+        methods.atomicIncrement();
 
-            methods.unsyncIncrement();
-            System.out.println("unsyncIncrement = " +  methods.getUnsyncMeth());
-            Thread.sleep(100);
+        methods.primitiveIncrement();
 
-            methods.syncIncrement();
-            System.out.println("syncIncrement = " +  methods.getSyncMeth());
-            Thread.sleep(100);
+        methods.unsyncIncrement();
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        methods.syncIncrement();
+
     }
 }

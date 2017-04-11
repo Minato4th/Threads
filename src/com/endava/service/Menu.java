@@ -28,49 +28,29 @@ public class Menu {
     }
 
     private int menuChoice(int choice, int i) throws InterruptedException {
-        if (choice == Numbers.ONE.getNumber()){
-            menuOne();
-        } else if (choice == Numbers.TWO.getNumber()){
-            menuTwo();
-        } else if (choice == Numbers.THREE.getNumber()){
-            menuThree();
-        } else if (choice == Numbers.FOUR.getNumber()){
-            menuFour();
-        } else if (choice == Numbers.FIVE.getNumber()){
-            menuFive();
-        } else if (choice == Numbers.SIX.getNumber()){
+        if (choice == Numbers.ONE.getNumber()) {
+            System.out.println("Sum for current random array is " + methods.sum(arr));
+        } else if (choice == Numbers.TWO.getNumber()) {
+            System.out.println("Max Value " + methods.maxValue(arr));
+        } else if (choice == Numbers.THREE.getNumber()) {
+            methods.reverseHelloMethod();
+        } else if (choice == Numbers.FOUR.getNumber()) {
+            methods.accessPriority();
+        } else if (choice == Numbers.FIVE.getNumber()) {
+            methods.lmbdaFunctionality();
+        } else if (choice == Numbers.SIX.getNumber()) {
             i = Numbers.SIX.getNumber();
         }
 
-        if (choice > Numbers.SIX.getNumber()){
+        if (choice > Numbers.SIX.getNumber()) {
             Text.INCORRECT.getText();
             i++;
-        } else if (choice < Numbers.SIX.getNumber()){
+        } else if (choice < Numbers.SIX.getNumber()) {
             i--;
         }
 
+        System.out.println();
+
         return i;
     }
-
-
-    private void menuOne() throws InterruptedException {
-        System.out.println("Sum for current random array is " + methods.sum(arr));
-    }
-
-    private void menuTwo() throws InterruptedException {
-        System.out.println("Max Value " + methods.maxValue(arr));
-    }
-
-    private void menuThree() throws InterruptedException {
-        methods.reverseHelloMethod();
-    }
-
-    private void menuFour() throws InterruptedException {
-        methods.accessPriority();
-    }
-
-    private void menuFive() throws InterruptedException {
-        methods.lmbdaFunctionality();
-    }
-
 }

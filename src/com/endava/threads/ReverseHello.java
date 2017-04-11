@@ -36,9 +36,6 @@ public class ReverseHello extends Thread {
             e.printStackTrace();
         }
 
-        System.out.println("Hello from  " + Thread.currentThread());
-
+        System.out.println("Hello from " + Thread.currentThread());
     }
-
-
 }

@@ -5,7 +5,7 @@ public enum Text {
             + "1. Sum current Array \n"
             + "2. Find max in Array \n"
             + "3. Reverse \"Hello from Thread\" \n"
-            + "4. Three Threads and they interaction \n"
+            + "4. Three Threads and their interaction \n"
             + "5. Lambda Threads \n"
             + "6. Exit"),
 

@@ -62,6 +62,7 @@ public class MenuMethods {
             ts[i].join();
             ans += ts[i].getAns();
         }
+
         return ans;
     }
 
@@ -122,10 +123,10 @@ public class MenuMethods {
             AccessThread act1 = new AccessThread(thread);
             act1.start();
         }
-
-        Thread.sleep(1000);
-        System.out.println(thread.getPrimitiveInt() + " = " + thread.getAtomicInt());
-        System.out.println(thread.getUnsyncMeth() + " = " + thread.getSyncMeth());
+        System.out.println("Wait for result 2 sec");
+        Thread.sleep(2000);
+        System.out.println("Primitive: " + thread.getPrimitiveInt() + " = " + thread.getAtomicInt() + " :Atomic");
+        System.out.println("Unsynchronized: " + thread.getUnsyncMeth() + " = " + thread.getSyncMeth() + " :Synchronized");
     }
 
 
@@ -167,8 +168,8 @@ public class MenuMethods {
 
         Thread.sleep(1000);
 
-        System.out.println(atom);
-        System.out.println(nonAtomic);
+        System.out.println("Atomic increment: " + atom);
+        System.out.println("Primitive increment: " + nonAtomic);
     }
 
 }

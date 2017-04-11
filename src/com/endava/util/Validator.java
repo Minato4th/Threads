@@ -56,6 +56,10 @@ public class Validator {
             }
         }
 
-        return Integer.parseInt(this.string);
+        try {
+            return Integer.parseInt(this.string);
+        } catch (NumberFormatException e){
+            return 6;
+        }
     }
 }
