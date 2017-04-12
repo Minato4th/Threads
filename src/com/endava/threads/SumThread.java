@@ -23,13 +23,4 @@ public class SumThread extends Thread{
         return ans;
     }
 
-    /*public static void main(String[] args) throws InterruptedException {
-        int[] arr = new int[100];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i;
-        }
-        int sum = sum(arr);
-        System.out.println("Sum: " + sum);
-    }*/
-
 }

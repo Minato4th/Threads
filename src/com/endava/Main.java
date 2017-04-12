@@ -1,19 +1,16 @@
 package com.endava;
 
-import com.endava.util.Initializer;
+import com.endava.service.Menu;
 
-/**
- * 4/7/2017
- */
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
 
-        Initializer initializer = new Initializer();
+    public static void main(String[] args) {
 
-        int[] arr = initializer.randomGenerator();
-        Thread.sleep(10000);
-        System.out.println("Max Value " + initializer.maxValue(arr));
-/*        System.out.println("Max Value " + initializer.sum(arr));*/
-
+        Menu m = new Menu();
+        try {
+            m.mainMenu();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
